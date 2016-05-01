@@ -14,7 +14,9 @@ MongoClient.connect(databaseUrl, function(err, database) {
   db = database;
 });
 
-
+exports.intro = function(req, res) {
+    res.send('Map Images Node app');
+};
  
 exports.findById = function(req, res) {
     console.log(req.params);
