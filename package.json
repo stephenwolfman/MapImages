@@ -1,0 +1,11 @@
+{
+    "name": "map-images",
+    "description": "Map Images",
+    "private": true,
+	  "dependencies": {
+	    "express": "^4.5.1",
+	    "logfmt": "^1.1.2",
+	    "mongodb": "^1.4.7"
+	  },
+    "version": "0.0.1"
+}
