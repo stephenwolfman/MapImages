@@ -45,9 +45,9 @@ exports.findBySender = function(req, res) {
     var sender = req.params.id;
     console.log('findBySender: ' + sender);
     db.collection('MapImages', function(err, collection) {
-        collection.findOne({'SentBy': sender}, function(err, item) {
-            console.log(item);
-            res.jsonp(item);
+        collection.find({"SentBy": sender}).toArray(function(err, items) {
+            console.log(items);
+            res.jsonp(items);
         });
     });
 };
