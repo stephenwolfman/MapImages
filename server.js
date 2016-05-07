@@ -3,7 +3,7 @@ var express = require("express");
 var logfmt = require("logfmt");
 var mapimagesapi = require('./routes/mapimages');
 var content = require('./routes/content');
- 
+
 var app = express();
 
 app.get('/mapimages/sentby/:id', mapimagesapi.findBySender);
