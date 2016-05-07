@@ -7,5 +7,9 @@
 	    "logfmt": "^1.1.2",
 	    "mongodb": "^1.4.7"
 	  },
-    "version": "0.0.1"
+    "version": "0.0.1",
+  "engines": {
+    "node": "4.4.3",
+    "npm": "2.15.1"
+  }
 }
