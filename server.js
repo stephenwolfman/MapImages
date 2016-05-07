@@ -1,14 +1,16 @@
 //Server.js
 var express = require("express");
 var logfmt = require("logfmt");
-var mapimages = require('./routes/mapimages');
+var mapimagesapi = require('./routes/mapimages');
+var content = require('./routes/content');
  
 var app = express();
 
-app.get('/mapimages/sentby/:id', mapimages.findBySender);
-app.get('/mapimages/:id', mapimages.findById);
-app.get('/mapimages', mapimages.findAll);
-app.get('/', mapimages.intro);
+app.get('/mapimages/sentby/:id', mapimagesapi.findBySender);
+app.get('/mapimages/:id', mapimagesapi.findById);
+app.get('/mapimages', mapimagesapi.findAll);
+app.get('/', content.intro);
+app.get('/imagelist', content.imageList);
 
 //Get port dynamically in prod/run on 1343 dev
 var port = Number(process.env.PORT || 1343);

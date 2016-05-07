@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>
+Map Images List view
+</title>
+</head>
+<body>
+      List view of all Map Images
+      <table>
+      	<thead>
+			    <td>Id</td>
+			    <td>Lat</td>
+			    <td>Long</td>
+			    <td>Desc</td>
+			    <td>Sent By</td>
+			    <td>Comment</td>
+			    <td>ImageUrl</td>
+			    <td>VideoURL</td>
+      	</thead>
+      	<tbody>
+  			{{#MapImages}}
+			<tr>
+			    <td>{{MapImageId}}</td>
+			    <td>{{Lat}}</td>
+			    <td>{{Long}}</td>
+			    <td>{{Desc}}</td>
+			    <td>{{SentBy}}</td>
+			    <td>{{Comment}}</td>
+			    <td>{{ImageUrl}}</td>
+			    <td>{{VideoURL}}</td>
+			</tr>
+			{{/MapImages}}
+      	</tbody>
+      </table>
+</body>
