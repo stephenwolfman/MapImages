@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "^4.5.1",
     "logfmt": "^1.1.2",
-    "mongodb": "^1.4.7"
+    "mongodb": "^1.4.7",
+    "npm": "^2.15.1"
   },
   "version": "0.0.1",
   "engines": {
