@@ -1,16 +1,36 @@
 {
-    "name": "map-images",
-    "description": "Map Images",
-    "private": true,
-	  "dependencies": {
-	    "express": "^4.5.1",
-	    "logfmt": "^1.1.2",
-	    "mongodb": "^1.4.7"
-	  },
-    "version": "0.0.1",
+  "name": "map-images",
+  "description": "Map Images",
+  "private": true,
+  "dependencies": {
+    "express": "^4.5.1",
+    "logfmt": "^1.1.2",
+    "mongodb": "^1.4.7"
+  },
+  "version": "0.0.1",
   "engines": {
     "node": "4.4.3",
     "npm": "2.15.1",
     "mustache": "2.2.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephenwolfman/MapImages.git"
+  },
+  "keywords": [
+    "Map",
+    "Images",
+    "Geolocation"
+  ],
+  "author": "Stephen Wolfman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenwolfman/MapImages/issues"
+  },
+  "homepage": "https://github.com/stephenwolfman/MapImages"
 }
