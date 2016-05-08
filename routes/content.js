@@ -38,9 +38,7 @@ exports.imageList = function(req, res) {
     db.collection('MapImages', function(err, collection) {
 
         collection.find().toArray(function(err, items) {
-            //res.jsonp(items);
             mapImagesData['MapImages'] = items;
-            console.log(mapImagesData);
             fs.readFile(filename, "utf8", function(err, data) {
                 if (err) throw err;
                 var html = mustache.to_html(data, mapImagesData);
