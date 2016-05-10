@@ -8,34 +8,39 @@ $(document).ready(function () {
 var WheresB = function(){
     this.bMap = null;
     this.bJson = null;
-    this.bIcon = window.location.protocol + "//" + window.location.host + "/" + "imagehandler/MapImage1";
+    this.bIcon = null;
+    this.b64Icon = null;
 };
 
 WheresB.prototype = {
 
 
-            initializeMap: function () {
+        initializeMap: function () {
             //var lat = 39.63398;
             //var long = -106.521015;-48.867187;
             var lat = 34.977201;
             var long = 10;
-            
-                    var myOptions = {
-          center: new google.maps.LatLng(lat,long),
-          zoom: 2,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
+
+            var myOptions = {
+                center: new google.maps.LatLng(lat,long),
+                zoom: 2,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
         bMap = new google.maps.Map(document.getElementById("map_canvas"),
             myOptions);
-            //bIcon = 'http://www.bthedifference.org/images/BTheDiff_Logo_32.png';
             bIcon = window.location.protocol + "//" + window.location.host + "/" + "imagehandler/MapImage1";
             var wB= this;
-            setTimeout(function(){wB.loadMarkers();},1000);
+            //setTimeout(function(){wB.loadMarkers();},1000);
+            $.getJSON('api/markerimage',
+            function(data){
+                b64Icon = data.data;
+                wB.loadMarkers(b64Icon);
+            }
+        );
         },
         
-        loadMarkers: function(){
+        loadMarkers: function(b64Icon){
             var mUrl = "api/mapimages";
-            //var mUrl = "wheresb.json";
             
             $.getJSON(mUrl,
                 function(data){
@@ -79,7 +84,8 @@ WheresB.prototype = {
                                 position: myLatlng,
                                 map: bMap,
                                 title:title,
-                                icon:bIcon
+                                icon:"data:image/png;base64," + b64Icon
+                                //icon:bIcon
                             });
 
                             var infowindow = null;

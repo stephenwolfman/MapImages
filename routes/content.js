@@ -89,11 +89,11 @@ exports.imageHandler = function (req, res, next) {
               //res.contentType('image/png');
               //res.send(doc.data);
   //              res.writeHead(200, {'Content-Type': 'text/html'});
-  //res.write('<img src="data:image/png;base64,')
-  //res.write(new Buffer(doc.data).toString());
-  //res.end('"/>');
-                res.contentType('image/png');
-              res.send(new Buffer(doc.data).toString());
+  res.write('<img src="data:image/png;base64,')
+  res.write(new Buffer(doc.data).toString());
+  res.end('"/>');
+                //res.contentType('image/png');
+              //res.send(new Buffer(doc.data).toString());
         });
     });
 };

@@ -9,6 +9,7 @@ var app = express();
 app.get('/api/mapimages/sentby/:id', mapimagesapi.findBySender);
 app.get('/api/mapimages/:id', mapimagesapi.findById);
 app.get('/api/mapimages', mapimagesapi.findAll);
+app.get('/api/markerimage', mapimagesapi.getMarkerImage);
 app.get('/', content.intro);
 app.get('/imagelist', content.imageList);
 app.get('/imagemap', content.imageMap);
@@ -20,6 +21,31 @@ app.get('/imagehandler/:id', content.imageHandler);
 app.get("/scripts/imagemap.js", function (req, res) {
     res.sendFile(__dirname + '/scripts/imagemap.js');
 });
+app.get("/Scripts/jquery-1.7.1.min.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/jquery-1.7.1.min.js');
+});
+app.get("/Scripts/jquery-ui-1.8.20.min.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/jquery-ui-1.8.20.min.js');
+});
+app.get("/Scripts/jquery.tablescroll.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/jquery.tablescroll.js');
+});
+app.get("/Scripts/jquery.blockUI.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/jquery.blockUI.js');
+});
+app.get("/Scripts/jquery.popupoverlay.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/jquery.popupoverlay.js');
+});
+app.get("/Scripts/MapImages.js", function (req, res) {
+    res.sendFile(__dirname + '/scripts/MapImages.js');
+});
+app.get("/Content/tablescroll.css", function (req, res) {
+    res.sendFile(__dirname + '/content/tablescroll.css');
+});
+app.get("/Content/site.css", function (req, res) {
+    res.sendFile(__dirname + '/content/site.css');
+});
+
 
 //Get port dynamically in prod/run on 1343 dev
 var port = Number(process.env.PORT || 1343);

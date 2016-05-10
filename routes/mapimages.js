@@ -51,3 +51,12 @@ exports.findBySender = function(req, res) {
         });
     });
 };
+
+exports.getMarkerImage = function(req, res) {
+    console.log(req.params);
+    db.collection('ImageStore', function(err, collection) {
+        collection.findOne({'ImageStoreId': 'MapImage1'}, function(err, doc) {
+            res.jsonp(doc);
+        });
+    });
+};
