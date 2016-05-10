@@ -1,6 +1,6 @@
 ﻿
 var uri = 'api/MapImages';
-var mapUrl = 'http://www.bthedifference.org/';
+var mapUrl = '';
 
 $(document).ready(function () {
     //loadMapImages();
