@@ -180,7 +180,7 @@ function OnUpload(evt) {
 
             $.ajax({
                 type: "POST",
-                url: "/api/Uploader",
+                url: "/api/uploader",
                 contentType: false,
                 processData: false,
                 data: data,

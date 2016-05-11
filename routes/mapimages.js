@@ -60,3 +60,23 @@ exports.getMarkerImage = function(req, res) {
         });
     });
 };
+
+
+
+
+exports.uploader = function(req, res){
+    console.log('test');
+    
+    var filesBase64 = [];
+ 
+    console.log(req.files);
+    req.pipe(req.busboy);
+    req.busboy.on('file', function (fieldname, file, filename) {
+        console.log("Uploading: " + filename); 
+        console.log(file); 
+    });
+
+    res.end(); // end the response
+};
+
+

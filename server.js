@@ -5,6 +5,11 @@ var mapimagesapi = require('./routes/mapimages');
 var content = require('./routes/content');
 
 var app = express();
+var bodyParser = require('body-parser');
+var busboy = require('connect-busboy');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(busboy()); 
 
 app.get('/api/mapimages/sentby/:id', mapimagesapi.findBySender);
 app.get('/api/mapimages/:id', mapimagesapi.findById);
@@ -15,7 +20,8 @@ app.get('/imagelist', content.imageList);
 app.get('/imagemap', content.imageMap);
 app.get('/images/:id', content.imageMap);
 app.get('/imagehandler/:id', content.imageHandler);
-
+//app.get('/api/uploader',mapimagesapi.uploader);
+app.post('/api/uploader', mapimagesapi.uploader);
 
 //Script files
 app.get("/scripts/imagemap.js", function (req, res) {
