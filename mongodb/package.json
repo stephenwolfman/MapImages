@@ -185,7 +185,7 @@
   },
   "dependencies": {
     "bson": "~0.2",
-    "kerberos": "0.0.11",
+    "kerberos": "1.1.4",
     "readable-stream": "latest"
   },
   "devDependencies": {
@@ -204,7 +204,7 @@
     "mongodb-version-manager": "^1.0.2"
   },
   "optionalDependencies": {
-    "kerberos": "0.0.11",
+    "kerberos": "1.1.4",
     "readable-stream": "latest"
   },
   "config": {
